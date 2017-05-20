@@ -7,7 +7,7 @@ It can be used to generate payloads to test against your DNS server, encode data
 Query_builder is RFC1034-compliant, and produces by default queries that look like:
 
 ```
-|-----------------Payload----------------|
+|-----------------------Payload----------------------|
 [63 chars].[63 chars].[63 chars].[x chars].example.com
 ```
 
