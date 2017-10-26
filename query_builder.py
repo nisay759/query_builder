@@ -7,12 +7,12 @@ def build_queries(data, domain, prefix, length):
     if (length is None) or (not length.isdigit()) or (not int(length) in range(0, 253)):
         length = 252
     elif len(domain + prefix) + 2 > int(length):
-        print "Length is less than (data + domain + prefix)"
-        print "Use a different value or leave empty !"
+        print("Length is less than (data + domain + prefix)")
+        print("Use a different value or leave empty !")
         sys.exit(-1)
     query = ""
     rem = int(length) - len(domain)
-    no_labels = rem / 64
+    no_labels = int(rem / 64)
     last_label_len = (rem % 64) - 1
     while data != "":
         data = prefix + data
@@ -30,7 +30,7 @@ def build_queries(data, domain, prefix, length):
                  label = data[:last_label_len]
                  data = data[last_label_len:]
                  query += label + '.' + domain
-        print query
+        print(query)
         query = ""
 
 def main():
